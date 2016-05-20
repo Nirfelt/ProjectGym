@@ -1,0 +1,18 @@
+{
+  "name": "ProjectGym",
+  "version": "0.0.0",
+  "description": "Project for logging gymresults",
+  "main": "app.js",
+  "scripts": {
+    "test": "np test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nirfelt/ProjectGym.git"
+  },
+  "author": "Sebastian Nirfelt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nirfelt/ProjectGym/issues"
+  }
+}
