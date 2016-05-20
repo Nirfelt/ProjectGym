@@ -4,7 +4,7 @@
   "description": "Project for logging gymresults",
   "main": "app.js",
   "scripts": {
-    "test": "np test"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -14,5 +14,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Nirfelt/ProjectGym/issues"
+  },
+  "dependencies": {
+    "express": "~4.13.4",
+    "mongoose": "~4.4.17"
   }
 }
