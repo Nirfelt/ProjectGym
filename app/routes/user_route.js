@@ -23,11 +23,18 @@ router.post('/', function (req, res, next) {
  * HTTP method: PUT
  */
 router.put('/', auth.requiresLogin, function (req, res, next) {
-  userController.putUpdateUser(req, res);
+  userController.putUser(req, res);
 });
 
 router.put('/password', auth.requiresLogin, function (req, res, next) {
   userController.putChangePassword(req, res);
+});
+/*
+ * Endpoint for /
+ * HTTP method: DELETE
+ */
+router.delete('/', auth.requiresLogin, function (req, res, next) {
+  userController.deleteUser(req, res);
 });
 
 module.exports = router;
