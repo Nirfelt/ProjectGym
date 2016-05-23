@@ -16,6 +16,7 @@ auth.requiresLogin = function (req, res, next) {
         message: 'Missing token',
       });
     }
+
     if (!email) {
       return res.status(400).send({
         message: 'Missing email',
@@ -23,15 +24,19 @@ auth.requiresLogin = function (req, res, next) {
     }
   }
 
-  mongoService.checkToken(token, function (err, userFromDb) {
-    if (!userFromDb || userFromDb.length === 0) {
+  mongoService.checkToken(email, function (err, result) {
+    if (!result || result === undefined) {
       return res.status(400).send({
         message: 'Invalid token or user not found',
       });
     }
 
-    var user = userFromDb[0];
-    req.body.user = user;
+    if (result.token !== req.body.token) {
+      return res.status(400).send({
+        message: 'Invalid token',
+      });
+    }
+
     next();
   });
 };
