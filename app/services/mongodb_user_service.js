@@ -29,7 +29,9 @@ var mongoService = function () {
   };
 
   return {
+    checkToken: checkToken,
     getUser: getUser,
+    insertUser: insertUser,
   };
 };
 
